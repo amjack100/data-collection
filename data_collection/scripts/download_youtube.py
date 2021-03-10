@@ -17,4 +17,5 @@ def main(url, destination):
             break
 
 
-fire.Fire(main)
+if __name__ == "__main__":
+    fire.Fire(main)
