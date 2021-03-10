@@ -1,20 +1,12 @@
-import subprocess
 import fire
-import sys
-import os
-import fire
+from data_collection import run_command
 
 
 def main(url, destination):
 
-    command = f"youtube-dl {url} -o {destination}".split()
-
-    process = subprocess.Popen(command)
-
-    while True:
-        if process.poll() is not None:
-            print("Done")
-            break
+    command = f"youtube-dl {url} -o {destination}"
+    # print(command)
+    run_command(command=command)
 
 
 if __name__ == "__main__":

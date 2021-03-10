@@ -7,6 +7,7 @@ import sys
 
 def main(script_name=None):
 
+    # del fire.__cached__
     scripts = os.path.join(pathlib.Path(__file__).parent, "scripts")
 
     available_scripts = [pathlib.Path(script).stem for script in os.listdir(scripts)]
@@ -23,6 +24,7 @@ def main(script_name=None):
         if script_name == script:
 
             mod = importlib.import_module(f"data_collection.scripts.{script_name}")
+            sys.argv.pop(0)
             fire.Fire(mod.main, name=script_name)
             sys.exit()
 
