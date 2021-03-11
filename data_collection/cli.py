@@ -6,7 +6,7 @@ import sys
 
 
 def main(script_name=None):
-
+    
     # del fire.__cached__
     scripts = os.path.join(pathlib.Path(__file__).parent, "scripts")
 

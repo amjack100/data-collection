@@ -148,7 +148,9 @@ def process_images_in_process_pool(
 #     help="Output face distance. Useful for tweaking tolerance setting.",
 
 
-def main(known_people_folder, image_to_check, cpus, tolerance, show_distance):
+def main(
+    known_people_folder, image_to_check, cpus=1, tolerance=0.6, show_distance=False
+):
     known_names, known_face_encodings = scan_known_people(known_people_folder)
 
     if os.path.isdir(image_to_check):

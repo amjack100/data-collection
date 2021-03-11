@@ -1,6 +1,16 @@
 import subprocess
 
 
+class Pipe(object):
+    def __init__(self, main, inputs, outputs) -> None:
+
+        self.inputs = inputs
+        self.outputs = outputs
+        self.main = main
+
+
+
+
 def run_command(command: str):
 
     command = command.split()
